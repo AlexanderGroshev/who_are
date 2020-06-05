@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta charset="UTF-8">
+  <title>Кто вы из МИЭМ</title>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+ <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </head>
+
+<style>
+
+body{
+    background-image: url('https://sun9-56.userapi.com/U6cyzE-yaA7XcEPyLIYUmH_dTzg1ioEypMqQaQ/uauEQJoQrOk.jpg'); /* Путь к фоновому рисунку */
+    background-position: left bottom; /* Положение фона */
+    background-repeat: repeat; /* Повторяем фон по горизонтали */
+    }
+.custom-colored-h1
+{
+    color: #FEFCFF;
+}
+
+</style>
+
+
+</head>
+<body>
+<br>
+<h1 class="custom-colored-h1" align="center"> Кто вы из МИЭМ</h1>
+
+	<br>
+<br>
+<br>
+<br>
+<br>
+    <div style="height:170px; width:450px;  margin: auto;
+  background-image: url('https://sun9-50.userapi.com/QuZDHoh6hlRNdSaO3axrmuqtULi6WyiidrtcCA/W_foRQEWq9o.jpg'); /* Путь к фоновому рисунку */
+    background-position: left bottom; /* Положение фона */
+    background-repeat: repeat; /* Повторяем фон по горизонтали */  ;
+    border: 10px double black;
+font-size: 22px; color: White;" align="center">
+
+<div class="container">
+      <div class="row">
+<div class="col text-center">
+         
+<h5> Ваша фотография в формате png, jpg</h5>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+    
+      <div class="form-group">
+        
+        <div class="custom-file">
+             <input type="file" class="custom-file-input" name='image' id="inputGroupFile01">
+            <label class="custom-file-label" for="inputGroupFile01">Выберите файл</label>             
+         </div>
+       </div>
+       
+      <button type="submit" class="btn btn-secondary btn-lg btn-block">Загрузить изображение</button>
+</div>
+</div>
+    </form>
+<script type="text/javascript">
+
+    $('.custom-file input').change(function (e) {
+        if (e.target.files.length) {
+            $(this).next('.custom-file-label').html(e.target.files[0].name);
+        }
+    });
+
+</script>
+
+</div>
+</div>
+</div>
+
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+  </script>
+
+</html>

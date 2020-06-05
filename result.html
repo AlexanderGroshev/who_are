@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta charset="UTF-8">
+  <title>Кто вы из МИЭМ</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+            <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<style>
+
+.custom-colored-h1
+{
+    color: #FEFCFF;
+}
+
+
+body{
+    background-image: url('https://sun9-56.userapi.com/U6cyzE-yaA7XcEPyLIYUmH_dTzg1ioEypMqQaQ/uauEQJoQrOk.jpg'); /* Путь к фоновому рисунку */
+    background-position: left bottom; /* Положение фона */
+    background-repeat: repeat; /* Повторяем фон по горизонтали */
+    }
+.box-card {
+width: 520px;
+    background-color: #FFFACD;
+    background: linear-gradient(to top, #fce25b, #ecc92b);
+}
+
+.txt{
+  height: 70px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+</style>
+</head>
+<body>
+<br>
+<h1 class="custom-colored-h1" align="center"> Кто вы из МИЭМ</h1>
+<br>
+<form method="POST" action =""{{ url_for('upload_image') }} " >
+ <div style="height:920px; width:1000px;  margin: auto;
+  background-image: url('https://sun9-50.userapi.com/QuZDHoh6hlRNdSaO3axrmuqtULi6WyiidrtcCA/W_foRQEWq9o.jpg'); /* Путь к фоновому рисунку */
+    background-position: left bottom; /* Положение фона */
+    background-repeat: repeat; /* Повторяем фон по горизонтали */  ;
+    border: 10px double black;
+font-size: 22px; color: White;" align="center">
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <h4> Ваша фотография </h4>
+        <img src={{ filepath }} class="rounded-circle"  height="250">
+    </div>
+  </div>
+</div>
+<br>
+
+<div id="app">
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+<div class="col text-center">
+      <h2> Топ 1 </h1>
+<div class="txt">
+        <p> {{ name }} </p>
+</div>
+        <img src={{ real_url }} class="rounded-circle" width="200" height="200">
+          <p> Процент сходства </p>
+          <el-progress :text-inside="true" :stroke-width="30" :percentage={{ p1 }}></el-progress>
+<br>
+<a href={{ link1 }} class="btn btn-info" role="button">hse.ru</a>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+   Полный анализ
+</button>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p><font color="black"> Обнаружение лица и получение ключевых точек </font></p>
+        <img src={{ filepath_draw }} class="rounded mx-auto d-block"  width="200">
+        <p><font color="black"> Нахождение наиболее похожего человека и составление усредненного лица</font></p>
+        <img src={{ filepath_morphed }} class="rounded mx-auto d-block"  width="200" height="200">
+        <p><font color="black"> Вы похожи на <b>{{ name }}</b></font></p>
+        <img src={{ real_url }} class="rounded mx-auto d-block" width="200">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+    <div class="col-4">
+<div class="col text-center">
+      <h2> Топ 2 </h1>
+<div class="txt">
+        <p> {{ name_2 }} </p>
+</div>
+        <img src={{ real_url_2 }} class="rounded-circle" width="200" height="200">
+          <p> Процент сходства </p>
+          <el-progress :text-inside="true" :stroke-width="30" :percentage={{ p2 }}></el-progress>
+ <br>
+<a href={{ link2 }} class="btn btn-info" role="button">hse.ru</a>    
+ <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal2">
+   Полный анализ
+</button>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p><font color="black"> Обнаружение лица и получение ключевых точек </font></p>
+        <img src={{ filepath_draw }} class="rounded mx-auto d-block"  width="200">
+        <p><font color="black"> Нахождение наиболее похожего человека и составление усредненного лица </font></p>
+        <img src={{ filepath_morphed_2 }} class="rounded mx-auto d-block"  width="200" height="200">
+        <p><font color="black"> Вы похожи на <b>{{ name_2 }}</b> </font></p>
+        <img src={{ real_url_2 }} class="rounded mx-auto d-block" width="200">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+
+      </div>
+    </div>
+  </div>
+</div>  
+  </div>
+</div>
+    <div class="col-4">
+<div class="col text-center">
+      <h2> Топ 3 </h1>
+<div class="txt">
+        <p> {{ name_3 }} </p>
+</div>
+        <img src={{ real_url_3 }} class="rounded-circle" width="200" height="200">
+         <p> Процент сходства </p>
+          <el-progress :text-inside="true" :stroke-width="30" :percentage={{ p3 }}></el-progress>
+<br>
+<a href={{ link3 }} class="btn btn-info" role="button">hse.ru</a>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal3">
+   Полный анализ
+</button>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p><font color="black"> Обнаружение лица и получение ключевых точек </font></p>
+        <img src={{ filepath_draw }} class="rounded mx-auto d-block"  width="200">
+        <p><font color="black"> Нахождение наиболее похожего человека и составление усредненного лица </font></p>
+        <img src={{ filepath_morphed_3 }} class="rounded mx-auto d-block"  width="200" height="200">
+        <p><font color="black"> Вы похожи на <b>{{ name_3 }}</b> </font></p>
+        <img src={{ real_url_3 }} class="rounded mx-auto d-block" width="200">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+  
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <a class="btn btn-secondary btn-lg btn-block" href="" role="button">Попробовать ещё раз</a>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+
+<div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <p><font color="white" size="2">ayugroshev@edu.hse.ru </font></p>
+
+</div>
+</div>
+</div>
+
+
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+  </script>
+
+</html>
